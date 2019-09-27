@@ -6,9 +6,8 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 %   working with learning algorithms.
 
 % You need to set these values correctly
-X_norm = X;
-mu = zeros(1, size(X, 2));
-sigma = zeros(1, size(X, 2));
+mu = mean(X);
+sigma = std(X);
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: First, for each feature dimension, compute the mean
@@ -18,6 +17,9 @@ sigma = zeros(1, size(X, 2));
 %               each feature by it's standard deviation, storing
 %               the standard deviation in sigma. 
 %
+  t = ones(length(X), 1);
+  X_norm = (X - (t * mu)) ./(t * sigma);
+
 %               Note that X is a matrix where each column is a 
 %               feature and each row is an example. You need 
 %               to perform the normalization separately for 
