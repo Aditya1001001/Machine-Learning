@@ -30,7 +30,7 @@ thetaZero = theta;
 thetaZero(1) = 0;
 
 grad = ((1 / m) * (h_theta - y)' * X) + ...
-    lambda / m * thetaZero';
+    lambda / m * thetaZero';D:\Projects\machine-learning\machine-learning-ex5\ex5
 
 
 
